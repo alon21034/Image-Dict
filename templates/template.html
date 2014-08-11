@@ -1,14 +1,18 @@
 {% extends "bootstrap/base.html" %}
-{% block title %}This is an example page{% endblock %}
-
-{% block navbar %}
-<div class="navbar navbar-fixed-top">
-  <!-- ... -->
-</div>
-
-
-{% endblock %}
+{% block title %} Image Dict {% endblock %}
 
 {% block content %}
-  <h1>Hello, Bootstrap</h1>
+
+<body>
+<div class="page-header" style="text-align:center">
+	<h1>Image Dict <small>alon21034<small></h1>
+</div>
+
+<div class="form-group">
+	<form class="form-search" action="/" style="text-align:center">
+		<input type="search" class="search-query" placeholder="query">
+		<button type="submit" class="btn btn-sm">search</button>
+	</form>
+</div>
+</body>
 {% endblock %}
