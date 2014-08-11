@@ -9,10 +9,17 @@
 </div>
 
 <div class="form-group">
-	<form class="form-search" action="/" style="text-align:center">
-		<input type="search" class="search-query" placeholder="query">
+	<form class="form-search" action="/" method="post" style="text-align:center">
+		<input type="search" name="query" class="search-query" placeholder="query">
 		<button type="submit" class="btn btn-sm">search</button>
 	</form>
 </div>
+
+{% if urls: %}
+{% for a in urls: %}
+	<img src={{ a }} width="120" height="120" />
+{% endfor %}
+{% endif %}
+
 </body>
 {% endblock %}
