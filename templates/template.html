@@ -4,7 +4,7 @@
 {% block content %}
 
 <body>
-<div class="page-header" style="text-align:center">
+<div class="page-header text-center">
 	<h1>Image Dict <small>alon21034<small></h1>
 </div>
 
@@ -15,11 +15,23 @@
 	</form>
 </div>
 
-{% if urls: %}
-{% for a in urls: %}
-	<img src={{ a }} width="120" height="120" />
-{% endfor %}
-{% endif %}
+<div>
+	{% if tran: %}
+	<ul>
+	{% for a in tran: %}
+		<li class="lead"> {{ a }} </li>
+	{% endfor %}
+	</ul>
+	{% endif %}
+</div>
+
+<div>
+	{% if urls: %}
+	{% for a in urls: %}
+		<img src={{ a }} width="120" height="120" />
+	{% endfor %}
+	{% endif %}
+</div>
 
 </body>
 {% endblock %}
