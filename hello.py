@@ -1,5 +1,5 @@
 import os
-from flask import *
+from flask import Flask, template
 from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
