@@ -29,7 +29,7 @@ def search(str):
 
 def translation(str):
 	d = Dict()
-	d.getResponse('Apfel')
+	d.getResponse(str)
 	d.parseResponse()
 	return d.printResults()
 
