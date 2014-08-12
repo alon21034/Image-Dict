@@ -1,12 +1,12 @@
 Image-Dict
 ==========
 
-*Installation
+* Installation
 
-Guide of Flask: 
+** Guide of Flask: 
 	https://devcenter.heroku.com/articles/getting-started-with-python
 
-Bootstrap:
+** Bootstrap:
 	$ pip install flask-bootstrap
 
 
