@@ -3,6 +3,7 @@ import urllib, urllib2
 from flask import *
 from flask_bootstrap import Bootstrap
 from Dict import Dict
+from Translate import Trans
 
 app = Flask(__name__, static_folder='static')
 Bootstrap(app)
@@ -11,11 +12,12 @@ Bootstrap(app)
 def hello():
 	msg = None
 	ret = None
-	trans = None
+	trans = []
 	if request.method == 'POST':
 		msg = request.form['query']
 		ret = search(msg)
-		trans = translation(msg)
+		trans.append(dictcc(msg))
+		trans.append(googletrans(msg))
 	return render_template('template.html', urls = ret, tran = trans)
 
 def search(str):
@@ -27,10 +29,18 @@ def search(str):
 		urls.append(s)
 	return urls
 
-def translation(str):
+def dictcc(str):
 	d = Dict()
 	d.getResponse(str)
 	d.parseResponse()
+	print d.printResults()
+	return d.printResults()
+
+def googletrans(str):
+	d = Trans()
+	d.getResponse(str)
+	d.parseResponse()
+	print d.printResults()
 	return d.printResults()
 
 if __name__ == '__main__':

@@ -82,5 +82,7 @@ class Dict:
 			for i in range(0,minWords):
 				if self.inputWords[i] == "\"\"": continue
 				#print self.inputWords[i].strip("\"") + "," + self.outputWords[i].strip("\"")
-				ret.append((self.inputWords[i].strip("\"") + "."*(length - len(self.inputWords[i].strip("\"")) + 15) + self.outputWords[i].strip("\"")).decode('utf-8'))
+
+				ret.append([self.inputWords[i].strip("\"").decode('utf-8'), self.outputWords[i].strip("\"").decode('utf-8')])
 		return ret
+

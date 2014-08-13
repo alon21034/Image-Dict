@@ -15,14 +15,37 @@
 	</form>
 </div>
 
-<div>
-	{% if tran: %}
-	<ul>
-	{% for a in tran: %}
-		<li class="lead"> {{ a }} </li>
-	{% endfor %}
-	</ul>
-	{% endif %}
+<div class="row">
+	<div class="col-md-4">
+		From <a herf="http://www.dict.cc/">Dict.cc</a>
+		{% if tran: %}
+		<ul>
+		{% for a in tran[0]: %}
+			<li class="lead"> {{ a[0] }} : {{ a[1] }} </li>
+		{% endfor %}
+		</ul>
+		{% endif %}
+	</div>
+
+	<div class="col-md-4">
+		{% if tran: %}
+		<ul>
+		{% for a in tran[1]: %}
+			<li class="lead"> {{ a[0] }} : {{ a[1]}} </li>
+		{% endfor %}
+		</ul>
+		{% endif %}
+	</div>
+
+	<div class="col-md-4">
+		{% if tran: %}
+		<ul>
+		{% for a in tran: %}
+			<li class="lead"> {{ a }} </li>
+		{% endfor %}
+		</ul>
+		{% endif %}
+	</div>
 </div>
 
 <div>
