@@ -21,7 +21,8 @@ def hello():
 	return render_template('template.html', urls = ret, tran = trans)
 
 def search(str):
-	result = urllib.urlopen("http://www.bing.com/images/search?q=%s&FORM=HDRSC2#a" % str)
+	print str
+	result = urllib.urlopen(("http://www.bing.com/images/search?q=%s&FORM=HDRSC2#a" % str))
 	content = result.read()
 	urls = []
 	for i in range(1, min(30, len(content)-2)):

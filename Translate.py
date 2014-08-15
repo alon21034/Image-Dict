@@ -12,8 +12,19 @@ class Trans:
 		f = urllib2.urlopen(req)
 		self.Response = f.read()
 	def parseResponse(self):
-		self.Result = 'apple'
-		self.InputWord = 'Apfel'		
+		input = self.Response
+
+		a = input
+		prev_a = ''
+
+		while a != prev_a:
+			prev_a = a
+			a = prev_a.replace(',,', ',None,')
+
+		a = a.replace('true','True')
+		a = a.replace('false', 'False')
+
+		self.Result = eval(a)
 
 	def printResults(self):
-		return [self.Result, self.InputWord]
+		return [self.Result[0][0][1], self.Result[0][0][0]]
